@@ -744,7 +744,6 @@ LEMA
 =========================== */
 #ceremonia {
   padding: 60px 30px;
-  background: var(--blanco);
 }
 
 .icono-iglesia {
@@ -852,7 +851,6 @@ LEMA
   font-size: 10px;
   color: var(--dorado);
   z-index: 1;
-  background: var(--rosa-fondo);
   padding: 2px;
 }
 
@@ -868,7 +866,6 @@ LEMA
    VESTIMENTA
 =========================== */
 #vestimenta {
-  background: var(--blanco);
   padding: 60px 30px;
 }
 
@@ -1043,7 +1040,6 @@ LEMA
 =========================== */
 #lluvia-sobres {
   padding: 60px 30px;
-  background: var(--blanco);
   text-align: center;
 }
 
@@ -1064,8 +1060,8 @@ LEMA
   font-weight: 400;
   margin: 0 0 20px;
 }
-aq #lluvia-sobres .texto-final-regalo {
-  font-family: "The Nautigal", cursive;
+#lluvia-sobres .texto-final-regalo {
+  font-family: "The Nautigal" !important;
   font-size: 40px;
   color: var(--dorado);
   font-weight: 400;
@@ -1079,4 +1075,10 @@ aq #lluvia-sobres .texto-final-regalo {
   font-size: 20px;
   line-height: 1.6;
   color: var(--texto-medio);
+}
+
+.titulo-15-fecha {
+  width: 100%;
+  max-width: 270px;
+  height: auto;
 }
