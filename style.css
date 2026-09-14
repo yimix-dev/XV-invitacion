@@ -401,7 +401,7 @@ section.visible .mes-año {
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  overflow: hidden;
+  overflow: visible;
   padding: 6vh 20px 0;
 }
 
@@ -419,64 +419,40 @@ section.visible .mes-año {
   width: clamp(150px, 30vw, 160px);
   height: auto;
   display: block;
-  margin: 0 auto;
+  margin: 0 auto -40px;
   animation: flotar 3s ease-in-out infinite;
   filter: drop-shadow(0px 4px 4px rgba(61, 59, 59, 0.55));
   position: relative;
   z-index: 2;
 }
 
-/* Contenedor principal usando Flexbox para control total */
-.titulo-grupo {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 35px auto 45px;
-  width: fit-content;
-  max-width: 100%; /* Evita desbordamientos en móvil */
-  padding: 0 15px; /* Margen de seguridad lateral */
+.titulo-15 {
+  width: 100%;
+  max-width: 350px;
+  height: auto;
+  animation: flotar 3s ease-in-out infinite;
 }
 
-.numero-15 {
-  font-family: "Cormorant Garamond", serif;
-  font-weight: 700;
-  /* Ajustamos los vw para que escale suavemente sin romperse */
-  font-size: clamp(100px, 35vw, 220px);
-  color: var(--dorado);
-  line-height: 0.85;
-  display: block;
-  text-shadow: 2px 3px 5px rgba(0, 0, 0, 0.15);
+@keyframes flotar {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+.nombre {
+  font-family: "The Nautigal", cursive;
+  font-size: clamp(45px, 14vw, 80px);
+  color: var(--texto-oscuro);
+  line-height: 1;
+  margin: 10px 0 5px;
   position: relative;
-  z-index: 1;
-}
-
-.texto-mis {
-  font-family: "The Nautigal", cursive;
-  /* Exactamente la mitad de los vw del '15' para mantener simetría */
-  font-size: clamp(50px, 17.5vw, 110px);
-  color: var(--dorado);
-  line-height: 1;
-  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.05);
   z-index: 2;
-
-  /* Alineación Flexbox: Lo empuja a la parte superior */
-  align-self: flex-start;
-  margin-top: 0.15em; /* Lo baja un poquito desde el borde superior */
-  margin-right: -0.25em; /* Al usar 'em', este solapamiento es 100% responsive */
-}
-
-.texto-anos {
-  font-family: "The Nautigal", cursive;
-  font-size: clamp(50px, 17.5vw, 110px);
-  color: var(--dorado);
-  line-height: 1;
-  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.05);
-  z-index: 2;
-
-  /* Alineación Flexbox: Lo empuja a la parte inferior */
-  align-self: flex-end;
-  margin-bottom: 0.15em; /* Lo sube un poquito desde el borde inferior */
-  margin-left: -0.35em; /* Lo incrusta debajo del '15' de manera adaptativa */
+  animation: flotar 3s ease-in-out infinite;
 }
 
 .foto-portada {
@@ -484,11 +460,13 @@ section.visible .mes-año {
   width: min(88vw, 340px);
   aspect-ratio: 3 / 4;
   margin-top: 10px;
-  background-image: url("./assets/images/valeryn.png");
-  background-size: cover;
+  background-image: url("./assets/images/princesa.webp");
+  background-size: contain;
   background-position: center top;
   background-repeat: no-repeat;
   z-index: 1;
+  filter: drop-shadow(0 10px 8px rgba(0, 0, 0, 0.2))
+    drop-shadow(0 20px 20px rgba(0, 0, 0, 0.12));
 }
 
 .foto-portada::after {
@@ -497,32 +475,6 @@ section.visible .mes-año {
   inset: 0;
   pointer-events: none;
   z-index: 2;
-  background: linear-gradient(
-      to bottom,
-      rgba(255, 255, 255, 1) 0%,
-      rgba(255, 255, 255, 0) 18%
-    ),
-    linear-gradient(
-      to top,
-      rgba(255, 255, 255, 1) 0%,
-      rgba(255, 255, 255, 0) 18%
-    ),
-    linear-gradient(
-      to right,
-      rgba(255, 255, 255, 1) 0%,
-      rgba(255, 255, 255, 0) 18%
-    ),
-    linear-gradient(
-      to left,
-      rgba(255, 255, 255, 1) 0%,
-      rgba(255, 255, 255, 0) 18%
-    ),
-    radial-gradient(
-      ellipse 70% 70% at center,
-      transparent 40%,
-      rgba(255, 255, 255, 0.9) 80%,
-      rgba(255, 255, 255, 1) 100%
-    );
 }
 
 /* ===========================
