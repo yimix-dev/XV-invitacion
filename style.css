@@ -431,6 +431,9 @@ section.visible .mes-año {
   max-width: 350px;
   height: auto;
   animation: flotar 3s ease-in-out infinite;
+
+  filter: drop-shadow(0 8px 6px rgba(0, 0, 0, 0.18))
+    drop-shadow(0 15px 15px rgba(0, 0, 0, 0.1));
 }
 
 @keyframes flotar {
@@ -531,16 +534,6 @@ LEMA
   padding: 60px 30px;
 }
 
-.acompañame {
-  font-family: "Cormorant Garamond", serif;
-  font-size: 20px;
-  font-style: italic;
-  color: var(--texto-medio);
-  line-height: 1.2;
-  margin-bottom: 30px;
-  padding: 0 10px;
-}
-
 .nombre-familia {
   font-family: "The Nautigal", cursive;
   font-size: 40px;
@@ -552,8 +545,24 @@ LEMA
 .ampersand {
   font-family: "The Nautigal", cursive;
   font-size: 50px;
-  color: var(--dorado);
+  color: var(--texto-oscuro);
   margin: 5px 0;
+}
+
+.mensaje-padres {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 18px;
+  color: var(--texto-medio);
+  line-height: 1.5;
+  margin: 30px 0 25px;
+}
+
+.invitacion-padres {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 18px;
+  color: var(--texto-medio);
+  line-height: 1.5;
+  margin: 25px 0 30px;
 }
 
 .padrinos-titulo {
@@ -1081,4 +1090,6 @@ LEMA
   width: 100%;
   max-width: 270px;
   height: auto;
+  filter: drop-shadow(0 8px 6px rgba(0, 0, 0, 0.18))
+    drop-shadow(0 15px 15px rgba(0, 0, 0, 0.1));
 }
