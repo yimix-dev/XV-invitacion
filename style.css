@@ -565,18 +565,21 @@ LEMA
   margin: 25px 0 30px;
 }
 
+#padrinos {
+  padding: 60px 30px;
+}
+
 .padrinos-titulo {
-  font-family: "Montserrat", sans-serif;
-  font-size: 15px;
-  letter-spacing: 3px;
-  text-transform: none;
-  color: var(--dorado);
-  margin: 15px 0 10px;
+  font-family: "The Nautigal", cursive;
+  font-size: 40px;
+  color: var(--texto-oscuro);
+  font-weight: 400;
+  line-height: 1.1;
 }
 
 .nombre-padrino {
   font-family: "Cormorant Garamond", serif;
-  font-size: 18px;
+  font-size: 20px;
   color: var(--texto-medio);
   line-height: 1.5;
 }
