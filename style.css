@@ -511,10 +511,11 @@ section.visible .mes-año {
 
 .nombre-familia {
   font-family: "The Nautigal", cursive;
-  font-size: 40px;
+  font-size: clamp(32px, 10vw, 40px);
   color: var(--texto-oscuro);
   font-weight: 400;
   line-height: 1.1;
+  white-space: nowrap;
 }
 
 .ampersand {
@@ -561,6 +562,10 @@ section.visible .mes-año {
   font-size: 18px;
   color: var(--texto-medio);
   line-height: 1.5;
+}
+
+.padrinos-resaltar {
+  color: #5b3213;
 }
 
 /* ===========================
@@ -916,7 +921,16 @@ section.visible .mes-año {
   font-size: 40px;
   color: var(--dorado);
   font-weight: 400;
-  margin: 0 0 20px;
+  margin: 0 0 2px;
+}
+
+.efectivo {
+  max-width: 420px;
+  margin: 0 auto 30px;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 20px;
+  line-height: 1.6;
+  color: var(--texto-medio);
 }
 
 .sobres-intro {
