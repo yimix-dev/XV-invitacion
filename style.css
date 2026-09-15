@@ -79,11 +79,15 @@ section {
   backdrop-filter: blur(6px);
   -webkit-backdrop-filter: blur(6px);
   border: 1px solid rgba(255, 255, 255, 0.3);
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.03),
-    0 10px 40px rgba(180, 130, 130, 0.08), 0 2px 4px rgba(0, 0, 0, 0.03);
+  box-shadow:
+    0 4px 6px rgba(0, 0, 0, 0.03),
+    0 10px 40px rgba(180, 130, 130, 0.08),
+    0 2px 4px rgba(0, 0, 0, 0.03);
   opacity: 0;
   transform: translateY(30px);
-  transition: opacity 0.8s ease, transform 0.8s ease;
+  transition:
+    opacity 0.8s ease,
+    transform 0.8s ease;
   overflow: visible;
 }
 
@@ -128,7 +132,8 @@ section.visible .mes-año {
 .mes-año {
   opacity: 0;
   transform: translateY(60px);
-  transition: opacity 1.4s cubic-bezier(0.22, 1, 0.36, 1),
+  transition:
+    opacity 1.4s cubic-bezier(0.22, 1, 0.36, 1),
     transform 1s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
@@ -212,7 +217,9 @@ section.visible .mes-año {
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: opacity 1.5s ease, visibility 1.5s ease;
+  transition:
+    opacity 1.5s ease,
+    visibility 1.5s ease;
   perspective: 1000px;
 }
 
@@ -225,7 +232,9 @@ section.visible .mes-año {
   width: 380px;
   height: 260px;
   position: relative;
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.22), 0 5px 12px rgba(0, 0, 0, 0.15);
+  box-shadow:
+    0 15px 35px rgba(0, 0, 0, 0.22),
+    0 5px 12px rgba(0, 0, 0, 0.15);
   cursor: pointer;
   border-radius: 4px;
 }
@@ -300,7 +309,9 @@ section.visible .mes-año {
   border-top: 155px solid #faf8f5;
   z-index: 5;
   transform-origin: top center;
-  transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1), z-index 0.3s;
+  transition:
+    transform 0.8s cubic-bezier(0.4, 0, 0.2, 1),
+    z-index 0.3s;
   filter: drop-shadow(0 10px 10px rgba(0, 0, 0, 0.18))
     drop-shadow(0 4px 4px rgba(0, 0, 0, 0.12));
 }
@@ -328,7 +339,9 @@ section.visible .mes-año {
   margin-left: -55px;
   z-index: 99;
   animation: pulsar 2s ease-in-out infinite;
-  transition: opacity 0.4s ease, transform 0.4s ease;
+  transition:
+    opacity 0.4s ease,
+    transform 0.4s ease;
   filter: drop-shadow(0 5px 6px rgba(0, 0, 0, 0.25));
 }
 
@@ -354,7 +367,8 @@ section.visible .mes-año {
   font-family: "The Nautigal", cursive;
   font-size: 32px;
   color: var(--texto-medio);
-  text-shadow: 0 0 8px rgba(255, 255, 255, 0.9),
+  text-shadow:
+    0 0 8px rgba(255, 255, 255, 0.9),
     0 0 15px rgba(255, 255, 255, 0.7);
   position: absolute;
   top: calc(50% - 180px);
@@ -387,23 +401,27 @@ section.visible .mes-año {
 
 #portada {
   position: relative;
-  min-height: 100dvh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-start;
-  overflow: visible;
-  padding: 6vh 20px 0;
+  width: calc(100% - 30px);
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+.fondo-ocacional {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: none;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  z-index: 0;
+  pointer-events: none;
 }
 
 .hero {
   position: relative;
-  z-index: 3;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
+  z-index: 1;
 }
 
 .corona {
@@ -435,20 +453,6 @@ section.visible .mes-año {
   50% {
     transform: translateY(-8px);
   }
-}
-
-.foto-portada {
-  position: relative;
-  width: min(88vw, 340px);
-  aspect-ratio: 3 / 4;
-  margin-top: 10px;
-  background-image: url("./assets/images/princesa.webp");
-  background-size: contain;
-  background-position: center top;
-  background-repeat: no-repeat;
-  z-index: 1;
-  filter: drop-shadow(0 10px 8px rgba(0, 0, 0, 0.2))
-    drop-shadow(0 20px 20px rgba(0, 0, 0, 0.12));
 }
 
 .foto-portada::after {
@@ -511,7 +515,7 @@ section.visible .mes-año {
 
 .nombre-familia {
   font-family: "The Nautigal", cursive;
-  font-size: clamp(32px, 10vw, 40px);
+  font-size: clamp(32px, 7vw, 40px);
   color: var(--texto-oscuro);
   font-weight: 400;
   line-height: 1.1;
@@ -539,6 +543,13 @@ section.visible .mes-año {
   color: var(--texto-medio);
   line-height: 1.5;
   margin: 25px 0 30px;
+}
+
+.nombre-pro {
+  width: 100%;
+  max-width: 270px;
+  height: auto;
+  filter: drop-shadow(0 3px 3px rgba(0, 0, 0, 0.1));
 }
 
 /* ===========================
@@ -871,7 +882,7 @@ section.visible .mes-año {
 
 .etiqueta {
   font-family: "Montserrat", sans-serif;
-  font-size: 11px;
+  font-size: 18px;
   letter-spacing: 6px;
   text-transform: uppercase;
   color: var(--dorado);
@@ -880,7 +891,7 @@ section.visible .mes-año {
 
 .vestimenta-texto {
   font-family: "Cormorant Garamond", serif;
-  font-size: 17px;
+  font-size: 20px;
   color: var(--texto-medio);
   line-height: 1.8;
   padding: 0 15px;
@@ -952,7 +963,7 @@ section.visible .mes-año {
 
 .confirmar-texto {
   font-family: "Cormorant Garamond", serif;
-  font-size: 17px;
+  font-size: 20px;
   font-style: italic;
   color: var(--texto-medio);
   margin-bottom: 10px;
@@ -960,7 +971,7 @@ section.visible .mes-año {
 
 .fecha-limite {
   font-family: "Montserrat", sans-serif;
-  font-size: 13px;
+  font-size: 16px;
   letter-spacing: 2px;
   color: var(--dorado);
   margin-bottom: 25px;
@@ -988,7 +999,7 @@ section.visible .mes-año {
 
 .mensaje-final {
   font-family: "Cormorant Garamond", serif;
-  font-size: 16px;
+  font-size: 20px;
   font-style: italic;
   color: var(--texto-medio);
   line-height: 1.8;
@@ -1028,7 +1039,9 @@ section.visible .mes-año {
   letter-spacing: 0.04em;
   background: linear-gradient(135deg, #e8a0b4, #c9a24b);
   color: #fff9f4;
-  transition: transform 0.15s ease, opacity 0.15s ease;
+  transition:
+    transform 0.15s ease,
+    opacity 0.15s ease;
 }
 
 #btnStop:hover {
