@@ -12,10 +12,11 @@
   font-style: normal;
 }
 
+/* ===========================
+   BASE
+=========================== */
+
 html {
-  background-size: cover;
-  background-position: center top;
-  background-repeat: repeat-y;
   background-color: #f9e4e8;
   min-height: 100%;
   height: 100%;
@@ -48,9 +49,9 @@ body {
   margin: 0 auto;
   overflow-x: hidden;
   min-height: 100vh;
-  background-size: cover;
-  background-repeat: repeat-y;
 }
+
+/* Fondo general */
 
 .fondo-bg {
   position: fixed;
@@ -64,6 +65,10 @@ body {
   z-index: -1;
   pointer-events: none;
 }
+
+/* ===========================
+   SECCIONES + ANIMACIÓN
+=========================== */
 
 section {
   margin: 20px 15px;
@@ -88,10 +93,6 @@ section.visible {
 }
 
 section.visible .corona,
-section.visible .subtitulo,
-section.visible .titulo-xv,
-section.visible .nombre,
-section.visible .apellido,
 section.visible .versiculo,
 section.visible .referencia,
 section.visible .nombre-familia,
@@ -111,10 +112,6 @@ section.visible .mes-año {
 }
 
 .corona,
-.subtitulo,
-.titulo-xv,
-.nombre,
-.apellido,
 .versiculo,
 .referencia,
 .nombre-familia,
@@ -135,88 +132,88 @@ section.visible .mes-año {
     transform 1s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
-/* Delays escalonados — cada elemento espera un poco más */
-.subtitulo {
-  transition-delay: 0.2s;
-}
-.titulo-xv {
-  transition-delay: 0.4s;
-}
-.nombre {
-  transition-delay: 0.6s;
-}
-.apellido {
-  transition-delay: 0.8s;
-}
+/* Delays */
+
 .corona {
   transition-delay: 0.2s;
 }
+
 .versiculo {
   transition-delay: 0.3s;
 }
+
 .referencia {
   transition-delay: 0.6s;
 }
-.seccion-titulo {
-  transition-delay: 0.2s;
-}
-.hora-evento {
-  transition-delay: 0.4s;
-}
-.lugar-nombre {
-  transition-delay: 0.6s;
-}
-.lugar-direccion {
-  transition-delay: 0.8s;
-}
-.btn-ubicacion {
-  transition-delay: 1s;
-}
-.faltan {
-  transition-delay: 0.2s;
-}
-.unidad {
-  transition-delay: 0.4s;
-}
-.numero-dia {
-  transition-delay: 0.4s;
-}
-.mes-año {
-  transition-delay: 0.6s;
-}
+
 .nombre-familia {
   transition-delay: 0.3s;
 }
+
 .ampersand {
   transition-delay: 0.6s;
 }
+
+.seccion-titulo {
+  transition-delay: 0.2s;
+}
+
+.hora-evento {
+  transition-delay: 0.4s;
+}
+
+.lugar-nombre {
+  transition-delay: 0.6s;
+}
+
+.lugar-direccion {
+  transition-delay: 0.8s;
+}
+
+.btn-ubicacion {
+  transition-delay: 1s;
+}
+
+.faltan {
+  transition-delay: 0.2s;
+}
+
+.unidad {
+  transition-delay: 0.4s;
+}
+
+.numero-dia {
+  transition-delay: 0.4s;
+}
+
+.mes-año {
+  transition-delay: 0.6s;
+}
+
 .evento-tiempo {
   transition-delay: 0.4s;
 }
 
 /* ===========================
-   SOBRE DE BIENVENIDA (ACTUALIZADO)
+   SOBRE DE BIENVENIDA
 =========================== */
+
 #sobre-overlay {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-
-  /* --- INICIO DEL CAMBIO DE FONDO --- */
-  background-image: url("./assets/images/bk2.webp"); /* Cambia esto por la ruta de tu imagen local */
-  background-size: cover; /* Asegura que la imagen cubra toda la pantalla */
-  background-position: center; /* Centra la imagen */
-  background-repeat: no-repeat; /* Evita que la imagen se repita */
-  /* --- FIN DEL CAMBIO DE FONDO --- */
-
+  background-image: url("./assets/images/bk2.webp");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   z-index: 99999;
   display: flex;
   align-items: center;
   justify-content: center;
   transition: opacity 1.5s ease, visibility 1.5s ease;
-  perspective: 1000px; /* Necesario para el efecto 3D de la solapa */
+  perspective: 1000px;
 }
 
 #sobre-overlay.oculto {
@@ -228,13 +225,11 @@ section.visible .mes-año {
   width: 380px;
   height: 260px;
   position: relative;
-  /* Sombra exterior más intensa y realista */
   box-shadow: 0 15px 35px rgba(0, 0, 0, 0.22), 0 5px 12px rgba(0, 0, 0, 0.15);
   cursor: pointer;
-  border-radius: 4px; /* Unifica el borde */
+  border-radius: 4px;
 }
 
-/* Fondo interior del sobre */
 #sobre-body {
   position: absolute;
   top: 0;
@@ -246,7 +241,8 @@ section.visible .mes-año {
   z-index: 1;
 }
 
-/* Aleta Izquierda */
+/* Aleta izquierda */
+
 #sobre::before {
   content: "";
   position: absolute;
@@ -260,7 +256,8 @@ section.visible .mes-año {
   z-index: 3;
 }
 
-/* Aleta Derecha */
+/* Aleta derecha */
+
 #sobre::after {
   content: "";
   position: absolute;
@@ -274,7 +271,8 @@ section.visible .mes-año {
   z-index: 3;
 }
 
-/* Aleta Inferior */
+/* Aleta inferior */
+
 #sobre-body::after {
   content: "";
   position: absolute;
@@ -286,11 +284,11 @@ section.visible .mes-año {
   border-right: 190px solid transparent;
   border-bottom: 145px solid #f2eedf;
   z-index: 4;
-  /* Sutil sombra para que resalte por encima de las aletas laterales */
-  filter: drop-shadow(0px -20px 15px rgba(0, 0, 0, 0.08));
+  filter: drop-shadow(0 -20px 15px rgba(0, 0, 0, 0.08));
 }
 
-/* Solapa Superior (La que se abre) */
+/* Solapa superior */
+
 #sobre-flap {
   position: absolute;
   top: 0;
@@ -299,22 +297,21 @@ section.visible .mes-año {
   height: 0;
   border-left: 190px solid transparent;
   border-right: 190px solid transparent;
-  border-top: 155px solid #faf8f5; /* Color hueso elegante */
+  border-top: 155px solid #faf8f5;
   z-index: 5;
   transform-origin: top center;
   transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1), z-index 0.3s;
-  /* Doble sombra para lograr la profundidad exacta de la imagen de referencia */
-  filter: drop-shadow(0px 10px 10px rgba(0, 0, 0, 0.18))
-    drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.12));
+  filter: drop-shadow(0 10px 10px rgba(0, 0, 0, 0.18))
+    drop-shadow(0 4px 4px rgba(0, 0, 0, 0.12));
 }
 
-/* Estado abierto de la solapa */
 #sobre-flap.abierto {
   transform: rotateX(180deg);
-  z-index: 0; /* Pasa hacia atrás del sobre al abrirse */
+  z-index: 0;
 }
 
-/* Sello (Ubicado en el centro inferior de la solapa) */
+/* Sello */
+
 #sello {
   width: 110px;
   height: 110px;
@@ -332,8 +329,7 @@ section.visible .mes-año {
   z-index: 99;
   animation: pulsar 2s ease-in-out infinite;
   transition: opacity 0.4s ease, transform 0.4s ease;
-  /* Sombra para darle volumen al sello de cera */
-  filter: drop-shadow(0px 5px 6px rgba(0, 0, 0, 0.25));
+  filter: drop-shadow(0 5px 6px rgba(0, 0, 0, 0.25));
 }
 
 #sello:hover {
@@ -341,7 +337,6 @@ section.visible .mes-año {
   animation-play-state: paused;
 }
 
-/* Ocultar el sello suavemente cuando el sobre se abre */
 #sobre.abierto #sello {
   opacity: 0;
   pointer-events: none;
@@ -359,11 +354,8 @@ section.visible .mes-año {
   font-family: "The Nautigal", cursive;
   font-size: 32px;
   color: var(--texto-medio);
-
-  /* --- SOMBRA PARA DESTACAR EL TEXTO --- */
-  text-shadow: 0px 0px 8px rgba(255, 255, 255, 0.9),
-    0px 0px 15px rgba(255, 255, 255, 0.7);
-
+  text-shadow: 0 0 8px rgba(255, 255, 255, 0.9),
+    0 0 15px rgba(255, 255, 255, 0.7);
   position: absolute;
   top: calc(50% - 180px);
   left: 50%;
@@ -374,26 +366,25 @@ section.visible .mes-año {
   transition: opacity 0.4s ease;
 }
 
-/* Ocultar texto cuando se abre */
 #sobre.abierto ~ .sobre-texto {
   opacity: 0;
 }
 
 @keyframes pulsar {
-  0% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.05);
-  }
+  0%,
   100% {
     transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.05);
   }
 }
 
 /* ===========================
    PORTADA
 =========================== */
+
 #portada {
   position: relative;
   min-height: 100dvh;
@@ -421,7 +412,7 @@ section.visible .mes-año {
   display: block;
   margin: 0 auto -40px;
   animation: flotar 3s ease-in-out infinite;
-  filter: drop-shadow(0px 4px 4px rgba(61, 59, 59, 0.55));
+  filter: drop-shadow(0 4px 4px rgba(61, 59, 59, 0.55));
   position: relative;
   z-index: 2;
 }
@@ -431,7 +422,6 @@ section.visible .mes-año {
   max-width: 350px;
   height: auto;
   animation: flotar 3s ease-in-out infinite;
-
   filter: drop-shadow(0 8px 6px rgba(0, 0, 0, 0.18))
     drop-shadow(0 15px 15px rgba(0, 0, 0, 0.1));
 }
@@ -470,8 +460,9 @@ section.visible .mes-año {
 }
 
 /* ===========================
-LEMA
+   LEMA
 =========================== */
+
 #lema {
   padding: 50px 30px;
 }
@@ -490,23 +481,6 @@ LEMA
   mask-size: contain;
   mask-repeat: no-repeat;
   mask-position: center;
-}
-
-.linea-decorativa::after {
-  content: none;
-}
-
-.linea-pequena {
-  width: 180px;
-  height: 28px;
-}
-.linea-mediana {
-  width: 260px;
-  height: 40px;
-}
-.linea-grande {
-  width: 340px;
-  height: 55px;
 }
 
 .versiculo {
@@ -530,6 +504,7 @@ LEMA
 /* ===========================
    FAMILIA
 =========================== */
+
 #familia {
   padding: 60px 30px;
 }
@@ -565,6 +540,10 @@ LEMA
   margin: 25px 0 30px;
 }
 
+/* ===========================
+   PADRINOS
+=========================== */
+
 #padrinos {
   padding: 60px 30px;
 }
@@ -585,18 +564,19 @@ LEMA
 }
 
 /* ===========================
-  FECHA
+   FECHA
 =========================== */
+
 #fecha {
   padding: 60px 30px;
 }
 
-.xv-grandes {
-  font-family: "The Nautigal", cursive;
-  font-size: 100px;
-  color: var(--dorado);
-  line-height: 1.3;
-  margin-bottom: 20px;
+.titulo-15-fecha {
+  width: 100%;
+  max-width: 270px;
+  height: auto;
+  filter: drop-shadow(0 8px 6px rgba(0, 0, 0, 0.18))
+    drop-shadow(0 15px 15px rgba(0, 0, 0, 0.1));
 }
 
 .dia-semana {
@@ -626,8 +606,9 @@ LEMA
 }
 
 /* ===========================
-   CONTADOR
+   COUNTDOWN
 =========================== */
+
 #countdown {
   padding: 60px 30px;
 }
@@ -664,7 +645,6 @@ LEMA
   font-family: "Montserrat", sans-serif;
   font-size: 9px;
   letter-spacing: 2px;
-  text-transform: none;
   color: var(--texto-oscuro);
   margin-top: 15px;
 }
@@ -679,6 +659,7 @@ LEMA
 /* ===========================
    CALENDARIO
 =========================== */
+
 #calendario {
   padding: 50px 30px;
 }
@@ -746,13 +727,21 @@ LEMA
 /* ===========================
    CEREMONIA Y RECEPCIÓN
 =========================== */
+
 #ceremonia {
   padding: 60px 30px;
 }
 
 .icono-iglesia {
-  font-size: 38px;
-  margin-bottom: 15px;
+  animation: flotar 3s ease-in-out infinite;
+  width: 35px;
+  height: auto;
+  margin: 0 auto 15px;
+}
+
+.icono-iglesia img {
+  width: 100%;
+  height: auto;
   display: block;
 }
 
@@ -810,6 +799,7 @@ LEMA
 /* ===========================
    ITINERARIO
 =========================== */
+
 #itinerario {
   padding: 60px 30px;
 }
@@ -869,6 +859,7 @@ LEMA
 /* ===========================
    VESTIMENTA
 =========================== */
+
 #vestimenta {
   padding: 60px 30px;
 }
@@ -896,8 +887,51 @@ LEMA
 }
 
 /* ===========================
+   LLUVIA DE SOBRES
+=========================== */
+
+#lluvia-sobres {
+  padding: 60px 30px;
+  text-align: center;
+}
+
+#lluvia-sobres .icono-sobre {
+  margin-bottom: 15px;
+}
+
+#lluvia-sobres .icono-sobre img {
+  width: 70px;
+  height: auto;
+  animation: flotar 3s ease-in-out infinite;
+}
+
+#lluvia-sobres .seccion-titulo {
+  font-size: 55px;
+  color: #cd8880;
+  margin: 0 0 20px;
+}
+
+#lluvia-sobres .texto-final-regalo {
+  font-family: "The Nautigal", cursive;
+  font-size: 40px;
+  color: var(--dorado);
+  font-weight: 400;
+  margin: 0 0 20px;
+}
+
+.sobres-intro {
+  max-width: 420px;
+  margin: 0 auto 30px;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 20px;
+  line-height: 1.6;
+  color: var(--texto-medio);
+}
+
+/* ===========================
    CONFIRMACIÓN
 =========================== */
+
 #confirmacion {
   padding: 60px 30px;
 }
@@ -949,41 +983,8 @@ LEMA
 }
 
 /* ===========================
-   PÉTALOS Y REPRODUCTOR
+   MÚSICA
 =========================== */
-.petalo {
-  position: fixed;
-  top: -20px;
-  pointer-events: none;
-  z-index: 999;
-  background: radial-gradient(
-    ellipse,
-    #f4c2c2 0%,
-    #e8b4b8 60%,
-    transparent 100%
-  );
-  border-radius: 50% 0 50% 0;
-  animation: caer linear forwards;
-  box-shadow: inset 0 0 4px rgba(200, 100, 100, 0.2);
-}
-
-@keyframes caer {
-  0% {
-    transform: translateY(-20px) rotate(0deg) translateX(0px);
-  }
-  25% {
-    transform: translateY(25vh) rotate(90deg) translateX(15px);
-  }
-  50% {
-    transform: translateY(50vh) rotate(180deg) translateX(-15px);
-  }
-  75% {
-    transform: translateY(75vh) rotate(270deg) translateX(10px);
-  }
-  100% {
-    transform: translateY(100vh) rotate(360deg) translateX(0px);
-  }
-}
 
 #ondaCanvas {
   display: block;
@@ -1026,112 +1027,85 @@ LEMA
   transform: none;
 }
 
-.icono-iglesia {
-  animation: flotar 3s ease-in-out infinite;
-  width: 35px;
-  height: auto;
-  margin: 0 auto;
-}
-
-.icono-iglesia img {
-  width: 100%;
-  height: auto;
-  display: block;
-}
-
 /* ===========================
-   LLUVIA DE SOBRES
+   PÉTALOS
 =========================== */
-#lluvia-sobres {
-  padding: 60px 30px;
-  text-align: center;
+
+.petalo {
+  position: fixed;
+  top: -20px;
+  pointer-events: none;
+  z-index: 999;
+  background: radial-gradient(
+    ellipse,
+    #f4c2c2 0%,
+    #e8b4b8 60%,
+    transparent 100%
+  );
+  border-radius: 50% 0 50% 0;
+  animation: caer linear forwards;
+  box-shadow: inset 0 0 4px rgba(200, 100, 100, 0.2);
 }
 
-#lluvia-sobres .icono-sobre {
-  margin-bottom: 15px;
+@keyframes caer {
+  0% {
+    transform: translateY(-20px) rotate(0deg) translateX(0);
+  }
+
+  25% {
+    transform: translateY(25vh) rotate(90deg) translateX(15px);
+  }
+
+  50% {
+    transform: translateY(50vh) rotate(180deg) translateX(-15px);
+  }
+
+  75% {
+    transform: translateY(75vh) rotate(270deg) translateX(10px);
+  }
+
+  100% {
+    transform: translateY(100vh) rotate(360deg) translateX(0);
+  }
 }
 
-#lluvia-sobres .icono-sobre img {
-  width: 70px;
-  height: auto;
-  animation: flotar 3s ease-in-out infinite;
-}
-
-#lluvia-sobres .seccion-titulo {
-  font-family: "The Nautigal", cursive;
-  font-size: 55px;
-  color: #cd8880;
-  font-weight: 400;
-  margin: 0 0 20px;
-}
-#lluvia-sobres .texto-final-regalo {
-  font-family: "The Nautigal" !important;
-  font-size: 40px;
-  color: var(--dorado);
-  font-weight: 400;
-  margin: 0 0 20px;
-}
-
-.sobres-intro {
-  max-width: 420px;
-  margin: 0 auto 30px;
-  font-family: "Cormorant Garamond", serif;
-  font-size: 20px;
-  line-height: 1.6;
-  color: var(--texto-medio);
-}
-
-.titulo-15-fecha {
-  width: 100%;
-  max-width: 270px;
-  height: auto;
-  filter: drop-shadow(0 8px 6px rgba(0, 0, 0, 0.18))
-    drop-shadow(0 15px 15px rgba(0, 0, 0, 0.1));
-}
 /* ===========================
-   FLORES DECORATIVAS PORTADA
-=========================== */
-/* ===========================
-   FLORES DECORATIVAS PORTADA
+   FLORES DECORATIVAS
 =========================== */
 .decoracion-seccion {
   position: absolute;
-  /* Expandimos 1px en todas las direcciones para cubrir el borde del section */
   top: -1px;
   left: -1px;
   right: -1px;
   bottom: -1px;
   border-radius: 24px;
-  overflow: hidden; /* Mantiene el corte curvo de las esquinas */
+  overflow: hidden;
   pointer-events: none;
   z-index: 1;
 }
 
 .flor {
   position: absolute;
-  width: 195px;
   height: auto;
 }
 
-/* Empujamos las flores con valores negativos para que "muerdan" el límite.
-   Así el overflow: hidden hará un corte limpio justo en la tinta de la flor */
 .flor-superior-izquierda {
+  width: clamp(130px, 42vw, 195px);
   top: 0;
   left: 0;
-  /* -4.6% a la izquierda (7px), -2.6% hacia arriba (4px) */
   transform: translate(-4.6%, -2.6%);
 }
 
 .flor-inferior-izquierda {
+  width: clamp(130px, 42vw, 195px);
   bottom: 0;
   left: 0;
-  /* -10% a la izquierda (15px), 2.6% hacia abajo (4px) */
   transform: translate(-10%, 2.6%);
 }
 
 .flor-inferior-derecha {
+  width: clamp(130px, 46vw, 195px);
   bottom: 0;
   right: 0;
-  /* 10% a la derecha (15px), 2.6% hacia abajo (4px) */
   transform: translate(10%, 2.6%);
 }
